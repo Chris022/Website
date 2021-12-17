@@ -3,8 +3,11 @@ import * as THREE from "three";
 
 // drawableObjects  -> array of all drawable Objects that should be added to the secene
 // otherObjects     -> list of all objects that don't habe a mesh and don't have a render method
-export default function createSceneObject(drawableObjects,otherObjects){
+// backgroundColor  -> hex background color
+export default function createSceneObject(drawableObjects,otherObjects,backgroundColor){
     let scene = new THREE.Scene();
+
+    scene.background = new THREE.Color( backgroundColor );
 
     drawableObjects.forEach(object => {
         scene.add(object.mesh)
