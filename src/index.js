@@ -1,7 +1,5 @@
-// Create heading node
-const heading = document.createElement('h1')
-heading.textContent = 'Lol!'
+import * as THREE from "three";
+import "./main";
 
-// Append heading node to the DOM
-const app = document.querySelector('#root')
-app.append(heading)
+const canvas = document.querySelector('#canvas');
+const renderer = new THREE.WebGLRenderer({canvas});
