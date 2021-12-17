@@ -1,14 +1,16 @@
 import createSceneObject    from "./objectTemplates/scene"
-import earth                from "./earth"
 import ambiantLight         from "./ambientLight"
 import directionalLight     from "./directionalLight"
+import car                  from "./car"
 
 
-let drawableObjects = [earth]
+
+let drawableObjects = [car]
 let otherObjectes = [ambiantLight,directionalLight]
 
 let background = 0xddeaff;
 
-let scene = createSceneObject(drawableObjects,otherObjectes,background)
+let scene = createSceneObject(drawableObjects,otherObjectes,[],background)
+
 
 export default scene;
