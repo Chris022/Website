@@ -2,6 +2,8 @@ const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const CopyPlugin = require("copy-webpack-plugin");
+
 
 module.exports = {
     mode: 'development',
@@ -12,6 +14,9 @@ module.exports = {
       hot: true,
       port: 8080,
     },
+    experiments: {
+        topLevelAwait: true,
+      },
     entry: {
         main: path.resolve(__dirname, './src/index.js'),
     },
@@ -21,12 +26,17 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'webpack Boilerplate',
+            title: 'ChrisisWorld',
             template: path.resolve(__dirname, './src/template.html'), // template file
             filename: 'index.html', // output file
         }),
         new CleanWebpackPlugin(),
         new webpack.HotModuleReplacementPlugin(),
+        new CopyPlugin({
+            patterns: [
+                { from: "src/resources", to: "resources" },
+              ],
+        })
     ],
     module: {
         rules:[
@@ -34,11 +44,19 @@ module.exports = {
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                use: ['babel-loader'],
+                loader: "babel-loader",
+                options: {
+                    presets: [
+                        '@babel/preset-env',
+                    ],
+                    plugins: [
+                        '@babel/transform-runtime'
+                    ]
+                }
             },
             // Images
             {
-                test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
+                test: /\.(?:ico|gif|png|jpg|jpeg|obj)$/i,
                 type: 'asset/resource',
             },
         ]
