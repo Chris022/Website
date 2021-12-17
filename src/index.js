@@ -29,6 +29,14 @@ renderer.render(scene, camera);
 
 function render(time) {
     time *= 0.001;  // convert time to seconds
+
+    //check if the size of the browser window changed
+    if (resizeRendererToDisplaySize(renderer)) {
+        //change the aspact ratio accordinly
+        const canvas = renderer.domElement;
+        camera.aspect = canvas.clientWidth / canvas.clientHeight;
+        camera.updateProjectionMatrix();
+    }
    
     cube.rotation.x = time;
     cube.rotation.y = time;
@@ -38,3 +46,14 @@ function render(time) {
     requestAnimationFrame(render);
   }
   requestAnimationFrame(render);
+
+  function resizeRendererToDisplaySize(renderer) {
+    const canvas = renderer.domElement;
+    const width = canvas.clientWidth;
+    const height = canvas.clientHeight;
+    const needResize = canvas.width !== width || canvas.height !== height;
+    if (needResize) {
+      renderer.setSize(width, height, false);
+    }
+    return needResize;
+  }
