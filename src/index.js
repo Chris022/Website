@@ -1,4 +1,5 @@
 import * as THREE from "three";
+import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls.js';
 import camera from "./objects/camera";
 import scene from "./objects/scene";
 
@@ -9,6 +10,12 @@ const renderer = new THREE.WebGLRenderer({canvas});
 //Set the renderer to use the camera and scene
 renderer.render(scene.scene, camera);
 
+let controls = new OrbitControls(camera, renderer.domElement);
+ 
+controls.target.set(0, 0, 0);
+controls.enablePan = false;
+controls.maxPolarAngle = Math.PI / 2;
+controls.enableDamping = true;
 
 function render(time) {
     time *= 0.001;  // convert time to seconds
