@@ -1,5 +1,5 @@
 import * as THREE from "three";
-
+import keyDict from "./keyHandler";
 
 // drawableObjects  -> array of all drawable Objects that should be added to the secene
 // otherObjects     -> list of all objects that don't habe a mesh and don't have a render method
@@ -19,7 +19,7 @@ export default function createSceneObject(drawableObjects,otherObjects,backgroun
 
     let renderFunction = (time) => {
         drawableObjects.forEach(object => {
-            object.renderFunction(time)
+            object.renderFunction(time,keyDict)
         });
     }
 
