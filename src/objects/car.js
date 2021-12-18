@@ -3,16 +3,7 @@ import {loadGLBObject}      from "./../utils/modelLoading"
 import {MathUtils} from 'three';
 import * as THREE from "three";
 
-let mash = await loadGLBObject("./../resources/models/car/car.glb")
-
-function rotateAboutPoint(obj, point, axis, theta){
-
-    obj.position.sub(point); // remove the offset
-    obj.position.applyAxisAngle(axis, theta); // rotate the POSITION
-    obj.position.add(point); // re-add the offset
-
-    obj.rotateOnAxis(axis, theta); // rotate the OBJECT
-}
+let mash = await loadGLBObject("./../resources/models/car.glb")
 
 let renderFunction = (time) => {
     //Create a matrix
