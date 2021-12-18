@@ -1,7 +1,7 @@
 import * as THREE from "three";
 import createDrawableObject from "./objectTemplates/drawable"
 
-const radius = 10;  // ui: radius
+const radius = 9.1;  // ui: radius
 const widthSegments = 100;  // ui: widthSegments
 const heightSegments = 100;  // ui: heightSegments
 const geometry = new THREE.SphereGeometry(radius, widthSegments, heightSegments);
