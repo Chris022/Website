@@ -5,14 +5,24 @@ import * as THREE from "three";
 
 let mash = await loadGLBObject("./../resources/models/car.glb")
 
-let renderFunction = (time) => {
-    //Create a matrix
-    var matrix = new THREE.Matrix4();
-    //Rotate the matrix
-    matrix.makeRotationX(-Math.PI / 1000);
-    car.mesh.rotation.x -= Math.PI / 1000
-    //rotate the object using the matrix
-    car.mesh.position.applyMatrix4(matrix);
+
+let rot = Math.PI/2;
+let renderFunction = (time,keyDict) => {
+
+    if(keyDict["a"]){
+        rot += Math.PI/100
+    }
+    else if(keyDict["d"]){
+        rot -= Math.PI/100;
+    }
+    car.mesh.rotation.y = rot
+    // //Create a matrix
+    // var matrix = new THREE.Matrix4();
+    // //Rotate the matrix
+    // matrix.makeRotationX(-Math.PI / 1000);
+    // car.mesh.rotation.x -= Math.PI / 1000
+    // //rotate the object using the matrix
+    // car.mesh.position.applyMatrix4(matrix);
 }
 
 let car = createDrawableObject(mash,renderFunction)
