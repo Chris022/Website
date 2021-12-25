@@ -22,7 +22,9 @@
     "webpack-dev-server": "^4.6.0"
   },
   "dependencies": {
+    "@babel/plugin-transform-runtime": "^7.16.5",
     "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^10.2.0",
     "three": "^0.135.0"
   }
 }
