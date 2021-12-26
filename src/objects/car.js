@@ -1,40 +1,43 @@
 import createDrawableObject from "./objectTemplates/drawable"
 import {loadGLBObject}      from "./../utils/modelLoading"
 import {CineonToneMapping, MathUtils} from 'three';
+import camera from "./camera";
 import * as THREE from "three";
 
 let mesh = await loadGLBObject("./../resources/models/car.glb")
 
-//let rot = Math.PI/2;
-let renderFunction = (time,keyDict) => {
 
-    //if(keyDict["a"]){
-    //    rot += Math.PI/100
-    //}
-    //else if(keyDict["d"]){
-    //    rot -= Math.PI/100;
-    //}
-    //car.mesh.rotation.y = rot
-    // //Create a matrix
+let a = 0
 
-    // //Rotate the matrix
+let rotAxisA = new THREE.Vector3(0,0,1).normalize()
+let rotAxisB = new THREE.Vector3(1,0,0).normalize()
+let rotAxisC = new THREE.Vector3(0,1,0).normalize()
 
-    // car.mesh.rotation.x -= Math.PI / 1000
-    // //rotate the object using the matrix
-    // car.mesh.position.applyMatrix4(matrix);
+let makeMove = (x,y) => {
+    rotAxisC.applyAxisAngle(rotAxisA,x)
+    rotAxisB.applyAxisAngle(rotAxisA,x)
+    mesh.rotateOnWorldAxis(rotAxisA,x)
+
+    rotAxisC.applyAxisAngle(rotAxisB,y)
+    rotAxisA.applyAxisAngle(rotAxisB,y)
+    mesh.rotateOnWorldAxis(rotAxisB,y)
 }
 
+let renderFunction = (time,keyDict) => {
+    if(keyDict["w"]){
+        makeMove(-Math.PI/100 * Math.cos(a),-Math.PI/100 * Math.sin(a))
+    }
+
+    if(keyDict["a"]){
+        a += Math.PI/100
+        mesh.rotateOnAxis(new THREE.Vector3(0,1,0),Math.PI/100)
+    }
+
+    mesh.position.x = 30*rotAxisC.x
+    mesh.position.y = 30*rotAxisC.y
+    mesh.position.z = 30*rotAxisC.z
+}
 
 let car = createDrawableObject(mesh,renderFunction)
-
-let a = -Math.PI/2
-let b = 3* Math.PI/4
-
-car.mesh.position.x = 10*Math.sin(Math.PI/2-a)*Math.sin(b)
-car.mesh.position.y = 10*Math.cos(b)
-car.mesh.position.z = 10*Math.sin(b)*Math.cos(Math.PI/2-a)
-
-car.mesh.rotateOnWorldAxis(new THREE.Vector3(0,0,1),-b)
-car.mesh.rotateOnWorldAxis(new THREE.Vector3(0,1,0),-a)
 
 export default car;
