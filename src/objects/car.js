@@ -1,7 +1,7 @@
 import createDrawableObject from "./objectTemplates/drawable"
 import {loadGLBObject}      from "./../utils/modelLoading"
 import {CineonToneMapping, MathUtils} from 'three';
-import camera from "./camera";
+import camera,{setPositon,setRotation} from "./camera";
 import * as THREE from "three";
 
 let mesh = await loadGLBObject("./../resources/models/car.glb")
@@ -17,10 +17,12 @@ let makeMove = (x,y) => {
     rotAxisC.applyAxisAngle(rotAxisA,x)
     rotAxisB.applyAxisAngle(rotAxisA,x)
     mesh.rotateOnWorldAxis(rotAxisA,x)
+    camera.rotateOnWorldAxis(rotAxisA,x)
 
     rotAxisC.applyAxisAngle(rotAxisB,y)
     rotAxisA.applyAxisAngle(rotAxisB,y)
     mesh.rotateOnWorldAxis(rotAxisB,y)
+    camera.rotateOnWorldAxis(rotAxisB,y)
 }
 
 let renderFunction = (time,keyDict) => {
@@ -28,14 +30,29 @@ let renderFunction = (time,keyDict) => {
         makeMove(-Math.PI/100 * Math.cos(a),-Math.PI/100 * Math.sin(a))
     }
 
+    if(keyDict["s"]){
+        makeMove(Math.PI/100 * Math.cos(a),Math.PI/100 * Math.sin(a))
+    }
+
     if(keyDict["a"]){
         a += Math.PI/100
         mesh.rotateOnAxis(new THREE.Vector3(0,1,0),Math.PI/100)
+        camera.rotateOnWorldAxis(rotAxisC.clone().normalize(),Math.PI/100)
+    }
+
+    if(keyDict["d"]){
+        a -= Math.PI/100
+        mesh.rotateOnAxis(new THREE.Vector3(0,1,0),-Math.PI/100)
+        camera.rotateOnWorldAxis(rotAxisC.clone().normalize(),-Math.PI/100)
     }
 
     mesh.position.x = 30*rotAxisC.x
     mesh.position.y = 30*rotAxisC.y
     mesh.position.z = 30*rotAxisC.z
+    
+    camera.position.x = 45*rotAxisC.x
+    camera.position.y = 45*rotAxisC.y
+    camera.position.z = 45*rotAxisC.z
 }
 
 let car = createDrawableObject(mesh,renderFunction)
