@@ -7,7 +7,7 @@ import scene from "./objects/scene";
 
 //Get the Canvas and set it as the display Canvas
 const canvas = document.querySelector('#canvas');
-const renderer = new THREE.WebGLRenderer({canvas});
+const renderer = new THREE.WebGLRenderer({canvas,antialias:true});
 renderer.setPixelRatio( window.devicePixelRatio );
 
 
