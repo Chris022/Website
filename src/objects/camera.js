@@ -10,14 +10,14 @@ let camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
 
 
 export let setPositon = (vect) => {
-    camera.position.x = 45*vect.x
-    camera.position.y = 45*vect.y
-    camera.position.z = 45*vect.z
+    camera.position.x = 70*vect.x
+    camera.position.y = 70*vect.y
+    camera.position.z = 70*vect.z
 }
 export let setRotation = (vect,rot) => {
     camera.rotateOnWorldAxis(vect,rot)
 }
-camera.position.y = 45
+camera.position.y = 300
 
 
 camera.lookAt(0,0,0)
