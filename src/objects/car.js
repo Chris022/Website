@@ -49,10 +49,8 @@ let renderFunction = (time,keyDict) => {
     mesh.position.x = 30*rotAxisC.x
     mesh.position.y = 30*rotAxisC.y
     mesh.position.z = 30*rotAxisC.z
-    
-    camera.position.x = 45*rotAxisC.x
-    camera.position.y = 45*rotAxisC.y
-    camera.position.z = 45*rotAxisC.z
+
+    setPositon(rotAxisC)
 }
 
 let car = createDrawableObject(mesh,renderFunction)
