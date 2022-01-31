@@ -11,9 +11,6 @@ const renderer = new THREE.WebGLRenderer({canvas,antialias:true});
 renderer.setPixelRatio( window.devicePixelRatio );
 
 
-
-camera.position.y = 60
-
 let controls = new OrbitControls(camera, canvas);
 controls.enablePan = true;
 controls.maxPolarAngle = Math.PI / 2;
