@@ -4,7 +4,7 @@ import {CineonToneMapping, MathUtils} from 'three';
 import camera,{setPositon,setRotation} from "./camera";
 import * as THREE from "three";
 
-let mesh = await loadGLBObject("./../resources/models/car.glb")
+let mesh = await loadGLBObject("./../resources/models/boat.glb")
 
 
 let a = 0
@@ -46,9 +46,9 @@ let renderFunction = (time,keyDict) => {
         camera.rotateOnWorldAxis(rotAxisC.clone().normalize(),-Math.PI/100)
     }
 
-    mesh.position.x = 30*rotAxisC.x
-    mesh.position.y = 30*rotAxisC.y
-    mesh.position.z = 30*rotAxisC.z
+    mesh.position.x = 25*rotAxisC.x
+    mesh.position.y = 25*rotAxisC.y
+    mesh.position.z = 25*rotAxisC.z
 
     //setPositon(rotAxisC)
 }
