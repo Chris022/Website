@@ -3,7 +3,7 @@ import createDrawableObject from "./objectTemplates/drawable"
 import {loadGLBObject}      from "./../utils/modelLoading"
 import { Mesh } from "three";
 
-let mesh = await loadGLBObject("./../resources/models/ball.glb")
+let mesh = await loadGLBObject("./../resources/models/ballTest.glb")
 
 
 let renderFunction = (time,keyDict) => {}

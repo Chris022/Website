@@ -8,7 +8,7 @@ import clouds               from "./clouds";
 import button               from "./button";
 
 
-let drawableObjects = [earth,button,car]//.concat(clouds)
+let drawableObjects = [earth,car]
 let otherObjectes = [ambiantLight,directionalLight]
 
 let background = new THREE.Color( 0x77D6FF );
