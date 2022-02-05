@@ -1,15 +1,17 @@
 import ReactDOM from 'react-dom'
-import React,{useRef,useEffect} from 'react'
+import React, { useRef, useEffect } from 'react'
 import { useMediaQuery } from 'react-responsive'
+
 
 import Greeting from "./reactJS/Greeting"
 import AboutMe from "./reactJS/AboutMe"
 import RotateScreen from "./reactJS/RotateScreen"
 import Socials from "./reactJS/Socials"
 import MobileControls from "./reactJS/MobileControls"
+import Menu from './reactJS/Menu'
 
 
-import {init} from "./threeJS/connector"
+import { init } from "./threeJS/connector"
 
 const App = () => {
     const isDesktopOrLaptop = useMediaQuery({
@@ -21,29 +23,30 @@ const App = () => {
     let threeJSDrawCanvas = useRef(null)
     let threeJSTouchCanvas = useRef(null)
 
-    let [openModal,setOpenModal] = React.useState("")
+    let [openModal, setOpenModal] = React.useState("")
 
-    useEffect(()=>{
-        if(isTabletOrMobile){
-            init(threeJSDrawCanvas.current,threeJSTouchCanvas.current,setOpenModal)
-        }else{
-            init(threeJSDrawCanvas.current,threeJSDrawCanvas.current,setOpenModal)
+    useEffect(() => {
+        if (isTabletOrMobile) {
+            init(threeJSDrawCanvas.current, threeJSTouchCanvas.current, setOpenModal)
+        } else {
+            init(threeJSDrawCanvas.current, threeJSDrawCanvas.current, setOpenModal)
         }
 
-    },[])
+    }, [])
 
     return (
         <>
-            <div ref={threeJSDrawCanvas} style={{"position":"absolute"}}> </div>        
+            <Menu setOpenModal={setOpenModal}/>
+            <div ref={threeJSDrawCanvas} style={{ "position": "absolute" }}> </div>
             {(isTabletOrMobile && isPortrait)
-                ? <RotateScreen/>
-                : <Greeting/>
+                ? <RotateScreen />
+                : <Greeting />
             }
             {(isTabletOrMobile && !isPortrait) &&
-                <MobileControls refC={threeJSTouchCanvas}/>
+                <MobileControls refC={threeJSTouchCanvas} />
             }
-            <AboutMe openModalTigger={openModal}/>
-            <Socials openModalTigger={openModal}/>
+            <AboutMe openModalTigger={openModal} />
+            <Socials openModalTigger={openModal} />
         </>
     )
 }
