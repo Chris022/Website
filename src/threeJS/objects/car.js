@@ -35,20 +35,20 @@ let renderFunction = (time,keyDict) => {
     let bufPos = mesh.position.clone()
     let bufRot = mesh.rotation.clone()
     let bufA = a
-
     if(keyDict["w"]){
-        vel += 0.2
+        if(vel < 5)
+            vel += 0.3*time/16
+    }
+    else if(keyDict["s"]){
+        if(vel > -5)
+            vel -= 0.3*time/16
+    }else{
+        vel /= 1.1*time/16
     }
 
-    if(keyDict["s"]){
-        //makeMove(Math.PI/500 * Math.cos(a),Math.PI/500 * Math.sin(a))
-        vel -= 0.2
-    }
 
-    makeMove(-Math.PI*vel/500 * Math.cos(a),-Math.PI*vel/500 * Math.sin(a))
-    if(vel != 0){
-        vel /= 1.1
-    }
+    let movementVector = new THREE.Vector2(-Math.cos(a),-Math.sin(a)).normalize()
+    makeMove(vel/500 * time/16 * movementVector.x,vel/500 * time/16 * movementVector.y)
 
     mesh.position.x = 25*rotAxisC.x
     mesh.position.y = 25*rotAxisC.y
@@ -90,14 +90,14 @@ let renderFunction = (time,keyDict) => {
     }
 
     if(keyDict["a"]){
-        a += Math.PI/100
-        mesh.rotateOnAxis(new THREE.Vector3(0,1,0),Math.PI/100)
+        a += (Math.PI/100)*1.1*time/16
+        mesh.rotateOnAxis(new THREE.Vector3(0,1,0),(Math.PI/100)*1.1*time/16)
         //camera.rotateOnWorldAxis(rotAxisC.clone().normalize(),Math.PI/100)
     }
 
     if(keyDict["d"]){
-        a -= Math.PI/100
-        mesh.rotateOnAxis(new THREE.Vector3(0,1,0),-Math.PI/100)
+        a -= (Math.PI/100)*1.1*time/16
+        mesh.rotateOnAxis(new THREE.Vector3(0,1,0),(-Math.PI/100)*1.1*time/16)
         //camera.rotateOnWorldAxis(rotAxisC.clone().normalize(),-Math.PI/100)
     }
 
