@@ -1,7 +1,8 @@
-//import * as world from "./world"
-//import * as ui from "./ui"
-import React,{useRef,useEffect} from 'react'
 import ReactDOM from 'react-dom'
+import React,{useRef,useEffect} from 'react'
+
+import Greeting from "./reactJS/Greeting"
+
 import {init} from "./threeJS/connector"
 
 const App = () => {
@@ -14,8 +15,11 @@ const App = () => {
 
 
     return (
-        <div ref={threeJSCanvas}>
-        </div>
+        <>
+            <div ref={threeJSCanvas}>
+            </div>
+            <Greeting/>
+        </>
     )
 }
 
