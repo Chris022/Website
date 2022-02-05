@@ -5,7 +5,9 @@ import { useMediaQuery } from 'react-responsive'
 import Greeting from "./reactJS/Greeting"
 import AboutMe from "./reactJS/AboutMe"
 import RotateScreen from "./reactJS/RotateScreen"
+import Socials from "./reactJS/Socials"
 import MobileControls from "./reactJS/MobileControls"
+
 
 import {init} from "./threeJS/connector"
 
@@ -39,6 +41,7 @@ const App = () => {
                 <MobileControls refC={threeJSTouchCanvas}/>
             }
             <AboutMe/>
+            <Socials/>
         </>
     )
 }
