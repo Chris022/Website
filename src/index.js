@@ -16,22 +16,27 @@ const App = () => {
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
     const isPortrait = useMediaQuery({ query: '(orientation: portrait)' })
 
-    let threeJSCanvas = useRef(null)
+    let threeJSDrawCanvas = useRef(null)
+    let threeJSTouchCanvas = useRef(null)
 
     useEffect(()=>{
-        init(threeJSCanvas.current,threeJSCanvas.current)
+        if(isTabletOrMobile){
+            init(threeJSDrawCanvas.current,threeJSTouchCanvas.current)
+        }else{
+            init(threeJSDrawCanvas.current,threeJSDrawCanvas.current)
+        }
+
     },[])
 
     return (
         <>
-            <div ref={threeJSCanvas} style={{"position":"absolute"}}>
-            </div>
+            <div ref={threeJSDrawCanvas} style={{"position":"absolute"}}> </div>        
             {(isTabletOrMobile && isPortrait)
                 ? <RotateScreen/>
                 : <Greeting/>
             }
             {(isTabletOrMobile && !isPortrait) &&
-                <MobileControls/>
+                <MobileControls refC={threeJSTouchCanvas}/>
             }
             <AboutMe/>
         </>
