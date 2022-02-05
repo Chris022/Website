@@ -4,7 +4,7 @@ import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls.js';
 import camera from "./objects/camera";
 import scene from "./objects/scene";
 
-let init = (domElement)=>{
+export let init = (drawDomElement,controlsDomElement)=>{
 
     //Get the Canvas and set it as the display Canvas
     let canvas = document.getElementById("canvas1")
@@ -13,9 +13,9 @@ let init = (domElement)=>{
     onWindowResize()
     renderer.setPixelRatio( window.devicePixelRatio );
 
-    domElement.appendChild(render.domElement)
+    drawDomElement.appendChild(renderer.domElement)
 
-    let controls = new OrbitControls(camera, document.getElementById("canvas2"));
+    let controls = new OrbitControls(camera, controlsDomElement);
     controls.enablePan = true;
     controls.maxPolarAngle = Math.PI / 2;
     controls.enableDamping = true;
