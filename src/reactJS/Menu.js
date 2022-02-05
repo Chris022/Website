@@ -1,10 +1,10 @@
 import React, { useRef, useEffect } from 'react'
 import TwitterIcon from '@mui/icons-material/Twitter';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import MenuIcon from '@mui/icons-material/Menu';
 
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import MenuIcon from '@mui/icons-material/Menu';
 import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
@@ -31,6 +31,14 @@ export default function Menu({setOpenModal}) {
                     sx={{ width: 200 }}
                 >
                     <List>
+                        <ListItem disablePadding>
+                            <ListItemButton>
+                                <ListItemIcon>
+                                    <MenuIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Menu" />
+                            </ListItemButton>
+                        </ListItem>
                         <ListItem disablePadding>
                             <ListItemButton onClick={() => setOpenModal("aboutMeModal")}>
                                 <ListItemIcon>
