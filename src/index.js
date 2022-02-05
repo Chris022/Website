@@ -1,21 +1,22 @@
 //import * as world from "./world"
 //import * as ui from "./ui"
-import React from 'react'
+import React,{useRef,useEffect} from 'react'
 import ReactDOM from 'react-dom'
+import {init} from "./threeJS/connector"
 
-const App = () => (
-  <div
-    style={{
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      height: '100vh',
-    }}
-  >
-    <h1>
-      Hello World
-    </h1>
-  </div>
-)
+const App = () => {
+
+    let threeJSCanvas = useRef(null)
+
+    useEffect(()=>{
+        init(threeJSCanvas.current,threeJSCanvas.current)
+    },[])
+
+
+    return (
+        <div ref={threeJSCanvas}>
+        </div>
+    )
+}
 
 ReactDOM.render(<App />, document.getElementById('app'))
