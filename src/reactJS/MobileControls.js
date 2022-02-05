@@ -50,7 +50,7 @@ export default function MobileControls({refC}) {
     }
 
     return (
-        <div style={{"position":"absolute","width":"100%","height":"100%"}} ref={refC}>    
+        <div style={{"position":"absolute","width":"100%","height":"100%","zIndex":1}} ref={refC}>    
         <table style={{"width":"100%","height":"100%","tableLayout":"fixed"}}>
             <tbody>
             <tr>
@@ -73,17 +73,3 @@ export default function MobileControls({refC}) {
 
     )
 }
-
-/**
- * <div class="flexbox-container" style={{"display":"flex","height":"100%"}}>
-        <div style={{"flex":"1","height":"100%"}}>Test column 1</div>
-        <div style={{"flex":"1","height":"100%"}}>Test column 2</div>
-        <div style={{"flex":"1","height":"100%"}}>
-            <div style={{"position":"absolute","left":"50%","top":"50%","transform":"translateX(50%) translateY(50%)"}}>
-            <button>---</button>
-            <button>---</button>
-            </div>
-            
-        </div>
-            </div>
- */
