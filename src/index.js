@@ -21,11 +21,13 @@ const App = () => {
     let threeJSDrawCanvas = useRef(null)
     let threeJSTouchCanvas = useRef(null)
 
+    let [openModal,setOpenModal] = React.useState("")
+
     useEffect(()=>{
         if(isTabletOrMobile){
-            init(threeJSDrawCanvas.current,threeJSTouchCanvas.current)
+            init(threeJSDrawCanvas.current,threeJSTouchCanvas.current,setOpenModal)
         }else{
-            init(threeJSDrawCanvas.current,threeJSDrawCanvas.current)
+            init(threeJSDrawCanvas.current,threeJSDrawCanvas.current,setOpenModal)
         }
 
     },[])
@@ -40,8 +42,8 @@ const App = () => {
             {(isTabletOrMobile && !isPortrait) &&
                 <MobileControls refC={threeJSTouchCanvas}/>
             }
-            <AboutMe/>
-            <Socials/>
+            <AboutMe openModalTigger={openModal}/>
+            <Socials openModalTigger={openModal}/>
         </>
     )
 }

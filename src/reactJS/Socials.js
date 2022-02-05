@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import TwitterIcon from '@mui/icons-material/Twitter';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -15,19 +15,33 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 
-export default function Socials() {
 
-    let [open, setOpen] = React.useState(true)
+let NAME = "socialsModal"
+export default function Socials({openModalTigger}) {
+
+    let [open, setOpen] = React.useState(false)
+    
+    let input = React.useRef()
 
     let handleClose = () => {
         setOpen(false)
     }
 
+    useEffect(()=>{
+        if(openModalTigger == NAME){
+            setOpen(true)
+        }
+    },[openModalTigger])
+
+
     return (
+        <>
+        <input id="socialsDialog" type="hidden" value={false} ref={input}/>
         <Dialog
             open={open}
             fullWidth
             maxWidth="xs"
+            keepMounted 
         >
             <DialogTitle><center><Typography variant="h2" style={{ "fontFamily": "MinSans" }}>Contact</Typography></center></DialogTitle>
             <div style={{ "margin": "10px" }}>
@@ -76,6 +90,7 @@ export default function Socials() {
 
 
         </Dialog>
+        </>
     )
 
 }

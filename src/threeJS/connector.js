@@ -4,7 +4,12 @@ import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls.js';
 import camera from "./objects/camera";
 import scene from "./objects/scene";
 
-export let init = (drawDomElement,controlsDomElement)=>{
+import modalControler from "./modalControler";
+
+export let init = (drawDomElement,controlsDomElement,openModalFunction)=>{
+
+    modalControler.triggerOpen = openModalFunction;
+    console.log(modalControler.triggerOpen)
 
     //Get the Canvas and set it as the display Canvas
     let canvas = document.getElementById("canvas1")
