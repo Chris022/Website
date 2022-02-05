@@ -32,7 +32,7 @@ export default function Menu({setOpenModal}) {
                 >
                     <List>
                         <ListItem disablePadding>
-                            <ListItemButton onClick={() => setOpenModal()}>
+                            <ListItemButton onClick={() => setOpenModal("aboutMeModal")}>
                                 <ListItemIcon>
                                     <AccountCircleIcon />
                                 </ListItemIcon>

@@ -16,14 +16,20 @@ let Grid = styled(MuiGrid)(({ theme }) => ({
     },
 }));
 
+let NAME = "aboutMeModal"
+export default function AboutMe({openModalTigger}) {
 
-export default function AboutMe() {
-
-    let [open, setOpen] = React.useState(true)
+    let [open, setOpen] = React.useState(false)
 
     let handleClose = () => {
         setOpen(false)
     }
+
+    React.useEffect(()=>{
+        if(openModalTigger == NAME){
+            setOpen(true)
+        }
+    },[openModalTigger])
 
     let data = [
         ["Task", "Hours per Day"],
@@ -88,8 +94,6 @@ export default function AboutMe() {
                                 For more information about my Projects check out the “My Projects” port
                             </Typography>
 
-
-
                         </div>
                     </Grid>
                 </Grid>
@@ -108,56 +112,3 @@ export default function AboutMe() {
     )
 
 }
-
-/**
- * <List>
-                    <ListItem>
-                        <Typography style={{"fontFamily":"MinSans"}}>Name: Christoph</Typography>
-                    </ListItem>
-                    <ListItem>
-                        <Typography style={{"fontFamily":"MinSans"}}>Age: 19</Typography>
-                    </ListItem>
-                    <ListItem>
-                        <Typography style={{"fontFamily":"MinSans"}}>Country: Austria</Typography>
-                    </ListItem>
-                    <ListItem>
-                        <Typography style={{"fontFamily":"MinSans"}}>School: Senior year at HTL-Salzburg </Typography>
-                    </ListItem>
-                    <ListItem>
-                        <Typography style={{"fontFamily":"MinSans"}}>My Hobbies:</Typography>
-                        <ul style={{"fontFamily":"MinSans"}}>
-                            <li>Rock-Climbing🧗</li>
-                            <li>Cycling🚴</li>
-                            <li>Running🏃</li>
-                            <li>Programming💻</li>
-                            <li>And pretty much everything else you can do on a computer💻</li>
-                        </ul>
-                    </ListItem>
-                    <ListItem>
-                        <Typography style={{"fontFamily":"MinSans"}}>My Skills:</Typography>
-                        <ul style={{"fontFamily":"MinSans"}}>
-                            <li>Over 8 Years of Java Programming☕️</li>
-                            <li>3 years’ experience in JavaScript/React✅</li>
-                            <li>Python🐍</li>
-                            <li>Haskell / Functional Programming🈵</li>
-                        </ul>
-                    </ListItem>
-                    <ListItem>
-                        <Typography style={{"fontFamily":"MinSans"}}>My Jobs:</Typography>
-                        <ul style={{"fontFamily":"MinSans"}}>
-                            <li>3 x Internships at a small Software Company / Manly Web-Programming, C#, Networking</li>
-                            <li>1 Year of work at the same Company (8 Hours a Week, when not at school)</li>
-                        </ul>
-                    </ListItem>
-                    <ListItem>
-                        <Typography style={{"fontFamily":"MinSans"}}>For more information about my Projects check out the “My Projects” port</Typography>
-                    </ListItem>
-
-                </List>
- * 
- * 
- * 
- * 
- * 
- * 
- */
