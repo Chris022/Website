@@ -5,6 +5,7 @@ import { useMediaQuery } from 'react-responsive'
 import Greeting from "./reactJS/Greeting"
 import AboutMe from "./reactJS/AboutMe"
 import RotateScreen from "./reactJS/RotateScreen"
+import MobileControls from "./reactJS/MobileControls"
 
 import {init} from "./threeJS/connector"
 
@@ -23,12 +24,15 @@ const App = () => {
 
     return (
         <>
-            <div ref={threeJSCanvas}>
+            <div ref={threeJSCanvas} style={{"position":"absolute"}}>
             </div>
             {(isTabletOrMobile && isPortrait)
                 ? <RotateScreen/>
                 : <Greeting/>
-            }            
+            }
+            {(isTabletOrMobile && !isPortrait) &&
+                <MobileControls/>
+            }
             <AboutMe/>
         </>
     )
