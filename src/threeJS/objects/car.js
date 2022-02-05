@@ -65,6 +65,7 @@ let renderFunction = (time,keyDict) => {
     for(var i = 0; i < 10; i++){
         //ReyCasting for collision detection
         let raycaster = new THREE.Raycaster();
+        raycaster.far = 1.6
         //change raycast position
         raycaster.set(rayPos ,normal)
     
