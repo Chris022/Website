@@ -23,15 +23,16 @@ export let init = (drawDomElement,controlsDomElement)=>{
     
     controls.update()
 
-    function render(time) {
-        time *= 0.001;  // convert time to seconds
-    
+    let lastTime = 0;
+    function render(time) {    
         //call render on all displayed objects
-        scene.renderFunction(time)
+        scene.renderFunction(time-lastTime)
        
         controls.update();
         renderer.render(scene.scene, camera);
         requestAnimationFrame(render);
+
+        lastTime = time;
     }
     requestAnimationFrame(render);
 
