@@ -4,8 +4,6 @@ import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
 import Typography from '@mui/material/Typography';
 
-
-
 export default function Greeting() {
 
     let [open,setOpen] = React.useState(true)
