@@ -5,7 +5,7 @@ import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
-export default function MobileControls() {
+export default function MobileControls({refC}) {
 
     let downForward = ()=>{
         document.dispatchEvent(new KeyboardEvent('keydown', {
@@ -50,7 +50,7 @@ export default function MobileControls() {
     }
 
     return (
-        <div style={{"position":"absolute","width":"100%","height":"100%"}}>    
+        <div style={{"position":"absolute","width":"100%","height":"100%"}} ref={refC}>    
         <table style={{"width":"100%","height":"100%","tableLayout":"fixed"}}>
             <tbody>
             <tr>
