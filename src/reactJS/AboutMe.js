@@ -17,11 +17,6 @@ let Grid = styled(MuiGrid)(({ theme }) => ({
 }));
 
 
-
-
-
-
-
 export default function AboutMe() {
 
     let [open, setOpen] = React.useState(true)
@@ -35,7 +30,7 @@ export default function AboutMe() {
         ["JS/React", 3],
         ["Java", 3],
         ["Python", 3],
-        ["Haskell/FP", 3]
+        ["Haskell", 3]
     ];
 
     let options = {
@@ -83,7 +78,7 @@ export default function AboutMe() {
                             <Typography variant="h6" style={{ "fontFamily": "MinSans" }}>My Jobs:</Typography>
                             <Typography variant="p" style={{ "fontFamily": "MinSans" }}>
                                 <ul>
-                                    <li>3 x Internships at a small Software Company / Manly Web-Programming, C#, Networking</li>
+                                    <li>3 x Internships at a small Software Company / Mainly Web-Programming, C#, Networking</li>
                                     <li>1 Year of work at the same Company (8 Hours a Week, when not at school)</li>
                                 </ul>
                             </Typography>
