@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title><%= htmlWebpackPlugin.options.title %></title>
+  </head>
+
+  <body>
+    <!-- add React app container -->
+    <div id="app"></div>
+
+  </body>
+
+  <style>
+    @font-face { font-family: MinSans; src: url('./resources/fonts/MinSans-Bold.ttf'); } 
+    html, body,.container {
+       margin: 0;
+       height: 100%;
+    }
+    #canvas {
+       width: 100%;
+       height: 100%;
+       display: block;
+    }
+    .container {
+      display: -webkit-flexbox;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+      justify-content: center;
+    }
+    </style>
+</html>

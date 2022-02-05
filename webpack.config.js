@@ -27,7 +27,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             title: 'ChrisisWorld',
-            template: path.resolve(__dirname, './src/template.html'), // template file
+            template: path.resolve(__dirname, './src/reactTemplate.html'), // template file
             filename: 'index.html', // output file
         }),
         new CleanWebpackPlugin(),
@@ -60,5 +60,8 @@ module.exports = {
                 type: 'asset/resource',
             },
         ]
-    }
+    },
+    resolve: {
+        extensions: ['*', '.js', '.jsx'],
+    },
 }
