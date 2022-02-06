@@ -1,4 +1,5 @@
 import {GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import * as THREE from "three";
 
 export async function loadGLBObject(path){
     let gltfLoader = new GLTFLoader ();
@@ -6,6 +7,15 @@ export async function loadGLBObject(path){
     const loadfunc = (path) => {
         return new Promise((resolve, reject) => {
             gltfLoader.load(path, (data) => {
+                data.scene.traverse((obj) => {
+                    if (obj.castShadow !== undefined) {
+                      obj.castShadow = true;
+                      obj.receiveShadow = true;
+                    }
+                    if(obj.material !== undefined){
+                        obj.material = new THREE.MeshPhongMaterial({ color: obj.material.color, flatShading : false })
+                    }
+                });
                 resolve(data);
             });
         });

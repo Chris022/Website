@@ -4,7 +4,7 @@ import ambiantLight         from "./ambientLight"
 import directionalLight     from "./directionalLight"
 import car                  from "./car"
 import earth                from "./earth"
-import clouds               from "./clouds";
+//import clouds               from "./clouds";
 import button               from "./button";
 
 

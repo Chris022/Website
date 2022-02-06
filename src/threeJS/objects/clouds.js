@@ -8,7 +8,7 @@ let renderFunction = (time) => {}
 let clouds = [];
 
 for(var i = 0; i < 10; i+=Math.PI/5){
-    let mash = await loadGLBObject("./../resources/models/cloud.glb")
+    let mash = await loadGLBObject("./../resources/models/cloud.glb")[0]
     let cloud = createDrawableObject(mash,renderFunction)
 
     cloud.mesh.position.x = 13*Math.cos(i)

@@ -9,11 +9,9 @@ import modalControler from "./modalControler";
 export let init = (drawDomElement,controlsDomElement,openModalFunction)=>{
 
     modalControler.triggerOpen = openModalFunction;
-    console.log(modalControler.triggerOpen)
 
     //Get the Canvas and set it as the display Canvas
-    let canvas = document.getElementById("canvas1")
-    let renderer = new THREE.WebGLRenderer({antialias:true});
+    let renderer = new THREE.WebGLRenderer({antialias:true,alpha: true});
 
     onWindowResize()
     renderer.setPixelRatio( window.devicePixelRatio );
