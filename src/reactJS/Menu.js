@@ -60,7 +60,7 @@ export default function Menu({setOpenModal}) {
                 </Box>
 
             </Drawer>
-            <Button style={{ "position": "absolute", "zIndex": 2 }} onClick={() => setDrawerOpen(true)}><MenuIcon sx={{ fontSize: 80 }} /></Button>
+            <Button style={{ "position": "absolute", "zIndex": 3 }} onClick={() => setDrawerOpen(true)}><MenuIcon sx={{ fontSize: 80 }} /></Button>
         </>
     )
 }
