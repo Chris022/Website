@@ -1,15 +1,19 @@
 import * as THREE from "three";
 import createSceneObject    from "./objectTemplates/scene"
 import ambiantLight         from "./ambientLight"
-import directionalLight     from "./directionalLight"
+import directionalLight1    from "./directionalLight1"
+import directionalLight2    from "./directionalLight2"
+import hemisphereLight      from "./hemisphereLight";
 import car                  from "./car"
 import earth                from "./earth"
+import portAboutMe          from "./portAboutMe";
+import portSocials          from "./portSocials";
 //import clouds               from "./clouds";
-import button               from "./button";
+//import button               from "./button";
 
 
-let drawableObjects = [earth,car]
-let otherObjectes = [ambiantLight,directionalLight]
+let drawableObjects = [earth,car,portAboutMe,portSocials]
+let otherObjectes = [ambiantLight,directionalLight1,directionalLight2,hemisphereLight]
 
 let background = new THREE.Color( 0x77D6FF );
 
