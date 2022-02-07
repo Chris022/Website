@@ -4,11 +4,14 @@ import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls.js';
 import camera from "./objects/camera";
 import scene from "./objects/scene";
 
-import modalControler from "./modalControler";
+import countryControler from "./countryControler";
+import rangeControler from "./rangeControler";
 
-export let init = (drawDomElement,controlsDomElement,openModalFunction)=>{
+export let init = (drawDomElement,controlsDomElement,openModalFunction,setCountryFunction,setRangeControlerFunction)=>{
 
-    modalControler.triggerOpen = openModalFunction;
+    countryControler.setCountry = setCountryFunction;
+    rangeControler.setInRange = setRangeControlerFunction;
+    rangeControler.onClickOpenModal = openModalFunction;
 
     //Get the Canvas and set it as the display Canvas
     let renderer = new THREE.WebGLRenderer({antialias:true,alpha: true});

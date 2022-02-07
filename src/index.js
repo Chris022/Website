@@ -9,9 +9,14 @@ import RotateScreen from "./reactJS/RotateScreen"
 import Socials from "./reactJS/Socials"
 import MobileControls from "./reactJS/MobileControls"
 import Menu from './reactJS/Menu'
+import InfoScreen from './reactJS/InfoScreen'
 
 
 import { init } from "./threeJS/connector"
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+ }
 
 const App = () => {
     const isDesktopOrLaptop = useMediaQuery({
@@ -23,13 +28,25 @@ const App = () => {
     let threeJSDrawCanvas = useRef(null)
     let threeJSTouchCanvas = useRef(null)
 
-    let [openModal, setOpenModal] = React.useState("")
+
+    let [country, setCountry] = React.useState("")
+    let [range, setRange] = React.useState(false)
+    let [modalName, setModalName] = React.useState("")
+
+    let [openModal,setOpenModal] = React.useState("")
+
+    let openModalFunc = () => {
+        setOpenModal("")
+        sleep(100).then(() => {
+            setOpenModal(modalName)
+        })
+    }
 
     useEffect(() => {
         if (isTabletOrMobile) {
-            init(threeJSDrawCanvas.current, threeJSTouchCanvas.current, setOpenModal)
+            init(threeJSDrawCanvas.current, threeJSTouchCanvas.current, setModalName,setCountry,setRange)
         } else {
-            init(threeJSDrawCanvas.current, threeJSDrawCanvas.current, setOpenModal)
+            init(threeJSDrawCanvas.current, threeJSDrawCanvas.current, setModalName,setCountry,setRange)
         }
 
     }, [])
@@ -37,6 +54,7 @@ const App = () => {
     return (
         <>
             <Menu setOpenModal={setOpenModal}/>
+            <InfoScreen country={country} range={range} openModalFunc={openModalFunc}/>
             <div ref={threeJSDrawCanvas} style={{ "position": "absolute" }}> </div>
             {(isTabletOrMobile && isPortrait)
                 ? <RotateScreen />
