@@ -43,7 +43,7 @@ export default function Socials({openModalTigger}) {
             maxWidth="xs"
             keepMounted 
         >
-            <DialogTitle><center><Typography variant="h2" style={{ "fontFamily": "MinSans" }}>Contact</Typography></center></DialogTitle>
+            <DialogTitle><center><Typography variant="h2" style={{ "fontFamily": "MinSans" }}>Socials</Typography></center></DialogTitle>
             <div style={{ "margin": "10px" }}>
                 <List>
                     <ListItem disablePadding>
