@@ -19,10 +19,10 @@ export let init = (drawDomElement,controlsDomElement,openModalFunction)=>{
     drawDomElement.appendChild(renderer.domElement)
 
     let controls = new OrbitControls(camera, controlsDomElement);
-    controls.enablePan = true;
-    controls.maxPolarAngle = Math.PI / 2;
+    //controls.enablePan = true;
+    controls.maxPolarAngle = 2*Math.PI;
     controls.enableDamping = true;
-    controls.enableZoom = true;
+    //controls.enableZoom = true;
     
     controls.update()
 
