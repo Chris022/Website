@@ -13,7 +13,7 @@ export async function loadGLBObject(path){
                       obj.receiveShadow = true;
                     }
                     if(obj.material !== undefined){
-                        obj.material = new THREE.MeshPhongMaterial({ color: obj.material.color, flatShading : false })
+                        obj.material = new THREE.MeshLambertMaterial({ color: obj.material.color})
                     }
                 });
                 resolve(data);
