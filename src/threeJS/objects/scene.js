@@ -9,11 +9,11 @@ import earth                from "./earth"
 import portAboutMe          from "./portAboutMe";
 import portSocials          from "./portSocials";
 import portProjects from "./portProjects";
-//import clouds               from "./clouds";
+import clouds               from "./clouds";
 //import button               from "./button";
 
 
-let drawableObjects = [earth,boat,portAboutMe,portSocials,portProjects]
+let drawableObjects = [earth,boat,portAboutMe,portSocials,portProjects].concat(clouds)
 let otherObjectes = [ambiantLight,directionalLight1,directionalLight2,hemisphereLight]
 
 let background = new THREE.Color( 0x77D6FF );
