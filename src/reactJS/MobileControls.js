@@ -50,21 +50,21 @@ export default function MobileControls({refC}) {
     }
 
     return (
-        <div style={{"position":"absolute","width":"100%","height":"100%","zIndex":1,"pointerEvents": "none"}} ref={refC}>    
+        <div style={{"position":"absolute","width":"100%","height":"100%","zIndex":2,"pointerEvents": "none"}} ref={refC}>    
         <table style={{"width":"100%","height":"100%","tableLayout":"fixed"}}>
             <tbody>
             <tr>
             <td style={{"verticalAlign":"middle","textAlign":"center"}}>
                 <div>
-                    <Button variant="outlined" size="large" onTouchStart={downForward} onTouchEnd={upForward}><ArrowUpwardIcon sx={{ fontSize: 80 }}/></Button>
+                    <Button style={{"pointerEvents": "all"}} variant="outlined" size="large" onTouchStart={downForward} onTouchEnd={upForward}><ArrowUpwardIcon sx={{ fontSize: 80 }}/></Button>
                     <br/>
-                    <Button variant="outlined" size="large" onTouchStart={downBackward} onTouchEnd={upBackward}><ArrowDownwardIcon sx={{ fontSize: 80 }}/></Button>
+                    <Button style={{"pointerEvents": "all"}} variant="outlined" size="large" onTouchStart={downBackward} onTouchEnd={upBackward}><ArrowDownwardIcon sx={{ fontSize: 80 }}/></Button>
                 </div>
             </td>
             <td><span></span></td>
             <td style={{"verticalAlign":"middle","textAlign":"center"}}>
-                <Button variant="outlined" size="large" onTouchStart={downLeft} onTouchEnd={upLeft}><ArrowBackIcon sx={{ fontSize: 80 }}/></Button>
-                <Button variant="outlined" size="large" onTouchStart={downRight} onTouchEnd={upRight}><ArrowForwardIcon sx={{ fontSize: 80 }}/></Button>
+                <Button style={{"pointerEvents": "all"}} variant="outlined" size="large" onTouchStart={downLeft} onTouchEnd={upLeft}><ArrowBackIcon sx={{ fontSize: 80 }}/></Button>
+                <Button style={{"pointerEvents": "all"}} variant="outlined" size="large" onTouchStart={downRight} onTouchEnd={upRight}><ArrowForwardIcon sx={{ fontSize: 80 }}/></Button>
             </td>
             </tr>
             </tbody>
