@@ -35,7 +35,6 @@ let bufPos = null
 let bufRot = null
 let bufA = 0
 let renderFunction = (time, keyDict) => {
-
     //create a save state befor moving
     bufRotAxisA = rotAxisA.clone()
     bufRotAxisB = rotAxisB.clone()
@@ -52,7 +51,7 @@ let renderFunction = (time, keyDict) => {
         if (vel > -5)
             vel -= 0.3 * time / 16
     } else {
-        vel /= 1.05 * time / 16
+        vel /= 1.05 * time / 16 > 1 ? 1.05 * time / 16 : 1.05
     }
 
 
