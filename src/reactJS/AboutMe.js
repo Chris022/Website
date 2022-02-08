@@ -36,7 +36,8 @@ export default function AboutMe({openModalTigger}) {
         ["JS/React", 3],
         ["Java", 3],
         ["Python", 3],
-        ["Haskell", 3]
+        ["Haskell", 3],
+        ["PHP",4]
     ];
 
     let options = {
