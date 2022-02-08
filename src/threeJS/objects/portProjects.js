@@ -11,9 +11,9 @@ import rangeControler from "../rangeControler";
 
 let mesh = await loadGLBObject("./../resources/models/rufezeichen.glb")
 
-mesh.position.x = -15;
+mesh.position.x = -15.5;
 mesh.position.y = 10;
-mesh.position.z = -17;
+mesh.position.z = -17.5;
 
 mesh.lookAt(new THREE.Vector3(0,0,0))
 
