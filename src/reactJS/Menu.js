@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react'
 import TwitterIcon from '@mui/icons-material/Twitter';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import MenuIcon from '@mui/icons-material/Menu';
+import ArticleIcon from '@mui/icons-material/Article';
 
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -45,6 +46,14 @@ export default function Menu({setOpenModal}) {
                                     <AccountCircleIcon />
                                 </ListItemIcon>
                                 <ListItemText primary="About Me" />
+                            </ListItemButton>
+                        </ListItem>
+                        <ListItem disablePadding>
+                            <ListItemButton onClick={() => setOpenModal("projectsModal")}>
+                                <ListItemIcon>
+                                    <ArticleIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Projects" />
                             </ListItemButton>
                         </ListItem>
                         <ListItem disablePadding>
