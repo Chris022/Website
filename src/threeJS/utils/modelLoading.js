@@ -9,11 +9,11 @@ export async function loadGLBObject(path){
             gltfLoader.load(path, (data) => {
                 data.scene.traverse((obj) => {
                     if (obj.castShadow !== undefined) {
-                      obj.castShadow = true;
-                      obj.receiveShadow = true;
+                        obj.castShadow = true;
+                        obj.receiveShadow = true;
                     }
                     if(obj.material !== undefined){
-                        obj.material = new THREE.MeshLambertMaterial({ color: obj.material.color})
+                        obj.material = new THREE.MeshPhongMaterial({ color: obj.material.color,flatShading:true})
                     }
                 });
                 resolve(data);

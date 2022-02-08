@@ -14,7 +14,9 @@ export let init = (drawDomElement,controlsDomElement,openModalFunction,setCountr
     rangeControler.onClickOpenModal = openModalFunction;
 
     //Get the Canvas and set it as the display Canvas
+    
     let renderer = new THREE.WebGLRenderer({antialias:true,alpha: true});
+    renderer.shadowMap.enabled = true
 
     onWindowResize()
     renderer.setPixelRatio( window.devicePixelRatio );
