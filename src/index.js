@@ -13,6 +13,7 @@ import InfoScreen from './reactJS/InfoScreen'
 
 
 import { init } from "./threeJS/connector"
+import Projects from './reactJS/Projects'
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -65,6 +66,7 @@ const App = () => {
             }
             <AboutMe openModalTigger={openModal} />
             <Socials openModalTigger={openModal} />
+            <Projects openModalTigger={openModal} />
         </>
     )
 }
