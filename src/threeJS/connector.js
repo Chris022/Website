@@ -23,7 +23,7 @@ export let init = (drawDomElement,controlsDomElement,openModalFunction,setCountr
 
     drawDomElement.appendChild(renderer.domElement)
 
-    let controls = new OrbitControls(camera, controlsDomElement);
+    let controls = new OrbitControls(camera, renderer.domElement);
     controls.enablePan = false;
     controls.maxPolarAngle = 2*Math.PI;
     controls.enableDamping = true;

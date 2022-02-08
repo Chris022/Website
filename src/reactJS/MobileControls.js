@@ -50,7 +50,7 @@ export default function MobileControls({refC}) {
     }
 
     return (
-        <div style={{"position":"absolute","width":"100%","height":"100%","zIndex":1,"pointer-events": "none"}} ref={refC}>    
+        <div style={{"position":"absolute","width":"100%","height":"100%","zIndex":1,"pointerEvents": "none"}} ref={refC}>    
         <table style={{"width":"100%","height":"100%","tableLayout":"fixed"}}>
             <tbody>
             <tr>
