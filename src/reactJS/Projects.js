@@ -4,22 +4,14 @@ import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
 import Typography from '@mui/material/Typography';
-import MuiGrid from '@mui/material/Grid';
 
 import Project from './Project';
 
-let Grid = styled(MuiGrid)(({ theme }) => ({
-    width: '100%',
-    ...theme.typography.body2,
-    '& [role="separator"]': {
-        margin: theme.spacing(0, 2),
-    },
-}));
 
 let NAME = "projectsModal"
 export default function Projects({ openModalTigger }) {
 
-    let [open, setOpen] = React.useState(true)
+    let [open, setOpen] = React.useState(false)
 
     let handleClose = () => {
         setOpen(false)
@@ -42,6 +34,10 @@ export default function Projects({ openModalTigger }) {
             <center>
                 <Typography variant="p" style={{ "fontFamily": "MinSans" }}>
                     Die folgenden Projekte sind nur einige der vielen, die ich bereits umgesetzt habe
+                </Typography>
+                <br/>
+                <Typography variant="a" style={{ "fontFamily": "MinSans" }}>
+                    <a href="https://github.com/Chris022">Alle meine Projekte findet man auf GitHub</a>
                 </Typography>
             </center>
             <div className="App-Projects-List" style={{ "margin": 20 }}>
@@ -92,7 +88,7 @@ let umsetzung3DViewer = "Das Programm ist dabei in Haskell mithilfe der mithilfe
 let Viewer3D = <Project heading="3DViewer" data={
     [
         { name: "Info:", element: <h1 className="App-Projects-Text">{info3DViewer}</h1> },
-        { name: "Umsetzung:", element: <h1 className="App-Projects-Text">{umsetzung3DViewer} <a className="App-Projects-Link" href="https://github.com/ChristophHTLSalzburg/3DRenderer">Mehr Informationen auf GitHub</a></h1> },
+        { name: "Umsetzung:", element: <h1 className="App-Projects-Text">{umsetzung3DViewer} <a className="App-Projects-Link" href="https://github.com/Chris022/3D-render-engine">Mehr Informationen auf GitHub</a></h1> },
         {
             name: "Screenshots:", element: <>
                 <img src="./resources/images/screenshot3DViewer1.png" className="App-Project-Image" alt="Screenshot" />
@@ -109,7 +105,7 @@ let umsetzungEngine = "Die Bibliothek ist dabei in Java programmiert worden und 
 let Engine = <Project heading="Java-Gameengine" data={
     [
         { name: "Info:", element: <h1 className="App-Projects-Text">{infoEngine}</h1> },
-        { name: "Umsetzung:", element: <h1 className="App-Projects-Text">{umsetzungEngine} <a className="App-Projects-Link" href="https://github.com/ChristophHTLSalzburg/GameEngine">Mehr Informationen auf GitHub</a></h1> },
+        { name: "Umsetzung:", element: <h1 className="App-Projects-Text">{umsetzungEngine} <a className="App-Projects-Link" href="https://github.com/Chris022/simple-game-enginee">Mehr Informationen auf GitHub</a></h1> },
     ]} />
 
 
@@ -121,17 +117,17 @@ let umsetzungImage = "Die Bibliothek ist dabei in Haskell programmiert worden un
 let Image = <Project heading="PPM-ImageLib" data={
     [
         { name: "Info:", element: <h1 className="App-Projects-Text">{infoImage}</h1> },
-        { name: "Umsetzung:", element: <h1 className="App-Projects-Text">{umsetzungImage} <a className="App-Projects-Link" href="https://github.com/ChristophHTLSalzburg/PPMImageLib">Mehr Informationen auf GitHub</a></h1> },
+        { name: "Umsetzung:", element: <h1 className="App-Projects-Text">{umsetzungImage} <a className="App-Projects-Link" href="https://github.com/Chris022/ppm-image-lib">Mehr Informationen auf GitHub</a></h1> },
     ]} />
 
 
 
-let infoHomePage = "Meine Homepage dient im Moment als Übersicht über meine Projekte, soll jedoch in Zukunft noch erweitert werden.";
+let infoHomePage = "Meine Eigene kleine Welt :-)";
 
-let umsetzungHomePage = "Die Website ist dabei mithilfe von React-JS programmiert. Auch wenn das im Moment eventuell noch nicht nötig wäre, wird das Erweitern somit zukünftig allerdings wesentlich einfacher werden."
+let umsetzungHomePage = "Die Website ist mit React und threeJs programmiert. Die Modelle sind alle in Bleder gezeichnet"
 
 let Homepage = <Project heading="Homepage" data={
     [
         { name: "Info:", element: <h1 className="App-Projects-Text">{infoHomePage}</h1> },
-        { name: "Umsetzung:", element: <h1 className="App-Projects-Text">{umsetzungHomePage} <a className="App-Projects-Link" href="https://github.com/ChristophHTLSalzburg/Homepage">Mehr Informationen auf GitHub</a></h1> },
+        { name: "Umsetzung:", element: <h1 className="App-Projects-Text">{umsetzungHomePage} <a className="App-Projects-Link" href="https://github.com/Chris022/website">Mehr Informationen auf GitHub</a></h1> },
     ]} />
