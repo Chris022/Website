@@ -1,6 +1,6 @@
 import * as THREE from "three";
 import createDrawableObject from "./objectTemplates/drawable"
-import { loadGLBObject } from "./../utils/modelLoading"
+import { loadGLBObject } from "../utils/modelLoading"
 
 import boat      from "./boat";
 import camera   from "./camera";
@@ -11,9 +11,9 @@ import rangeControler from "../rangeControler";
 
 let mesh = await loadGLBObject("./../resources/models/rufezeichen.glb")
 
-mesh.position.x = 20;
-mesh.position.y = 15;
-mesh.position.z = -5;
+mesh.position.x = -15;
+mesh.position.y = 10;
+mesh.position.z = -17;
 
 mesh.lookAt(new THREE.Vector3(0,0,0))
 
@@ -33,7 +33,7 @@ let renderFunction = (time,keyDict) => {
 
     if(dist < 7 && !!!rangeSet){
         rangeControler.setInRange(true)
-        rangeControler.onClickOpenModal("aboutMeModal")
+        rangeControler.onClickOpenModal("projectsModal")
         rangeSet = true;
     }else if(dist >= 7 && rangeSet){
         rangeControler.setInRange(false)
@@ -43,7 +43,7 @@ let renderFunction = (time,keyDict) => {
 
     let camDist = camera.position.distanceTo(mesh.position)
     if(camDist < 50 && !!!countrySet){
-        countryControler.setCountry("About Me")
+        countryControler.setCountry("Projects")
         countrySet = true
     }else if(camDist >= 50 && countrySet){
         countryControler.setCountry("")
@@ -51,6 +51,6 @@ let renderFunction = (time,keyDict) => {
     }
 }
 
-let portAboutMe = createDrawableObject(mesh,renderFunction);
+let portProjects = createDrawableObject(mesh,renderFunction);
 
-export default portAboutMe;
+export default portProjects;
