@@ -69,7 +69,7 @@ export default function Menu({setOpenModal}) {
                 </Box>
 
             </Drawer>
-            <Button style={{ "position": "absolute", "zIndex": 3 }} onClick={() => setDrawerOpen(true)}><MenuIcon sx={{ fontSize: 80 }} /></Button>
+            <Button style={{ "position": "absolute", "zIndex": 3 }} onClick={() => setDrawerOpen(true)}><MenuIcon style={{"background":"repeating-linear-gradient( -45deg, #CA4246 20px,  #E16541 20px,  #E16541 40px,  #F18F43 40px, #F18F43 60px)",}}sx={{ fontSize: 80 }} /></Button>
         </>
     )
 }

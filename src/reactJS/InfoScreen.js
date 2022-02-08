@@ -11,7 +11,7 @@ export default function InfoScreen({  country, range,openModalFunc }) {
                 <Typography variant="h2" style={{ "margin": "1%", "fontFamily": "MinSans",
                     "background":"repeating-linear-gradient( -45deg, #CA4246 20px,  #E16541 20px,  #E16541 40px,  #F18F43 40px, #F18F43 60px)",
                     "WebkitBackgroundClip":"text","WebkitTextFillColor":"transparent" }}>
-                    {country}
+                    {country == ""? "You Are In" : country}
                 </Typography>
             </div>
             {range &&
