@@ -6,17 +6,30 @@ import {MathUtils} from 'three';
 let renderFunction = (time) => {}
 
 let clouds = [];
-
+let mash = await loadGLBObject("./../resources/models/cloud.glb")
 for(var i = 0; i < 10; i+=Math.PI/5){
-    let mash = await loadGLBObject("./../resources/models/cloud.glb")[0]
-    let cloud = createDrawableObject(mash,renderFunction)
 
-    cloud.mesh.position.x = 13*Math.cos(i)
-    cloud.mesh.position.y = 13*Math.sin(i)
-    cloud.mesh.position.z = 0
+    let cloud = createDrawableObject(mash.clone(),renderFunction)
 
-    cloud.mesh.rotation.x = Math.PI/2
-    cloud.mesh.rotation.y = Math.PI/2 + i
+    let rndX = Math.random()-0.5
+    let rndY = Math.random()-0.5
+    let rndZ = Math.random()-0.5
+
+    let len = Math.sqrt(rndX*rndX+rndY*rndY+rndZ*rndZ)
+
+    rndX /= len
+    rndY /= len
+    rndZ /= len
+
+    rndX *= 35
+    rndY *= 35
+    rndZ *= 35
+
+    cloud.mesh.position.x = rndX
+    cloud.mesh.position.y = rndY
+    cloud.mesh.position.z = rndZ
+
+    cloud.mesh.lookAt(new THREE.Vector3(0,0,0))
     clouds.push(cloud)
 }
 
