@@ -2,7 +2,7 @@ import * as THREE from "three";
 import createDrawableObject from "./objectTemplates/drawable"
 import { loadGLBObject } from "../utils/modelLoading"
 
-import car      from "./car";
+import boat      from "./boat";
 import camera   from "./camera";
 import countryControler from "../countryControler";
 import rangeControler from "../rangeControler";
@@ -29,7 +29,7 @@ let renderFunction = (time,keyDict) => {
 
     counter+=0.05*time/16;
     
-    let dist = car.mesh.position.distanceTo(mesh.position)
+    let dist = boat.mesh.position.distanceTo(mesh.position)
 
     if(dist < 7 && !!!rangeSet){
         rangeControler.setInRange(true)

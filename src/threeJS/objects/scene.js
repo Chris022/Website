@@ -4,7 +4,7 @@ import ambiantLight         from "./ambientLight"
 import directionalLight1    from "./directionalLight1"
 import directionalLight2    from "./directionalLight2"
 import hemisphereLight      from "./hemisphereLight";
-import car                  from "./car"
+import boat                  from "./boat"
 import earth                from "./earth"
 import portAboutMe          from "./portAboutMe";
 import portSocials          from "./portSocials";
@@ -12,7 +12,7 @@ import portSocials          from "./portSocials";
 //import button               from "./button";
 
 
-let drawableObjects = [earth,car,portAboutMe,portSocials]
+let drawableObjects = [earth,boat,portAboutMe,portSocials]
 let otherObjectes = [ambiantLight,directionalLight1,directionalLight2,hemisphereLight]
 
 let background = new THREE.Color( 0x77D6FF );

@@ -1,7 +1,7 @@
 import * as THREE from "three";
 import createDrawableObject from "./objectTemplates/drawable"
 
-import car from "./car";
+import boat from "./boat";
 import modalControler from "../modalControler";
 
 const radius = 2;  // ui: radius
@@ -19,7 +19,7 @@ let counter = 0;
 let renderFunction = (time,keyDict) => {
     if(counter == 10){
         counter = 0;
-        let dist = car.mesh.position.distanceTo(sphere.position)
+        let dist = boat.mesh.position.distanceTo(sphere.position)
 
         if(dist < 3){
             if(keyDict[" "]){

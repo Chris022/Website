@@ -1,5 +1,5 @@
 import createDrawableObject from "./objectTemplates/drawable"
-import { loadGLBObject } from "./../utils/modelLoading"
+import { loadGLBObject } from "../utils/modelLoading"
 import camera, { setPositon, setRotation } from "./camera";
 import earth from "./earth";
 import * as THREE from "three";
@@ -112,6 +112,6 @@ let renderFunction = (time, keyDict) => {
 }
 
 
-let car = createDrawableObject(mesh, renderFunction)
+let boat = createDrawableObject(mesh, renderFunction)
 
-export default car;
+export default boat;
