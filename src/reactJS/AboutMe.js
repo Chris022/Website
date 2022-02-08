@@ -80,7 +80,7 @@ export default function AboutMe({openModalTigger}) {
                         <div style={{ "marginLeft": "2%" }}>
                             <Typography variant="h6" style={{ "fontFamily": "MinSans" }}>Introduction:</Typography>
                             <Typography variant="p" style={{ "fontFamily": "MinSans","fontSize":18}}>
-                                Hi, my name is Christoph. I am 19 Years old and I am in my senior year at the HTL-Salzburg.
+                                Hi, my name is Christoph. I am 19 years old and I am in my senior year at the HTL-Salzburg.
                             </Typography>
                             <br />
                             <br />
@@ -99,8 +99,8 @@ export default function AboutMe({openModalTigger}) {
                             </Typography>
                             <br />
                             <br />
-                            <Typography variant="p" style={{ "fontFamily": "MinSans" }}>
-                                For more information about my Projects check out the “My Projects” port
+                            <Typography variant="p" style={{ "fontFamily": "MinSans","fontSize":18 }}>
+                                For more information about my projects check out the “Projects” port
                             </Typography>
 
                         </div>

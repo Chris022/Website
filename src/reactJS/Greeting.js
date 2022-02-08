@@ -33,11 +33,11 @@ export default function Greeting() {
                 </Typography>
                 <Typography style={{"fontFamily":"MinSans-Normal","fontSize":23}}>
                     Use the <b>W/S & A/D</b> keys to steer. Rotate the world using the left mouse button.
-                    In the top right you can see which country you are <b>looking at</b>.
+                    In the top right, you can see which country you are <b>looking at</b>.
                     The red exclamation marks represent different ports! What are you waiting for? Go and explore them😊
                 </Typography>
                 <Typography style={{"fontFamily":"MinSans-Normal","fontSize":23}}>
-                    PS: If you tent to get seesick, you can also  just use the drawer in the top left.
+                    PS: If you tend to get seasick, you can also just use the drawer in the top left.
                 </Typography>
             </div>
             <div style={{"margin":"10px"}}>

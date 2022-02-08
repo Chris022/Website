@@ -104,7 +104,7 @@ let Viewer3D = <Project heading="3DViewer" data={
 
 
 
-let infoEngine = "Hierbei handelt es sich um eine einfache Spiele Engine. Diese erlaubt es einem im objektorientierten Stiel, Spiele zu schreibe.  Besondere Features sind dabei, Stereo Audio, Animierte Sprites und eine 2D Physik Engine. Bei der Entwicklung wurde großes Augenmerk auf eine einfache Verwendung gelegt.";
+let infoEngine = "Hierbei handelt es sich um eine einfache Spiele Engine. Diese erlaubt es einem im objektorientierten Stiel, Spiele zu schreiben.  Besondere Features sind dabei, Stereo Audio, Animierte Sprites und eine 2D Physik Engine. Bei der Entwicklung wurde großes Augenmerk auf eine einfache Verwendung gelegt.";
 
 let umsetzungEngine = "Die Bibliothek ist dabei in Java programmiert worden und ist dabei Objektorientiert und Event-basiert."
 
@@ -130,7 +130,7 @@ let Image = <Project heading="PPM-ImageLib" data={
 
 let infoHomePage = "Meine Eigene kleine Welt :-)";
 
-let umsetzungHomePage = "Die Website ist mit React und threeJs programmiert. Die Modelle sind alle in Bleder gezeichnet"
+let umsetzungHomePage = "Die Website ist mit React und threeJs programmiert. Die Modelle sind alle in Blender gezeichnet"
 
 let Homepage = <Project heading="Homepage" data={
     [
