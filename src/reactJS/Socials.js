@@ -41,7 +41,13 @@ export default function Socials({openModalTigger}) {
             open={open}
             fullWidth
             maxWidth="xs"
-            keepMounted 
+            keepMounted
+            PaperProps={{
+                style: {
+                  background: "#0ac repeating-conic-gradient(hsla(354, 100%, 78%, 1) 0 15deg, hsla(354, 100%, 89%, 1) 0 30deg)",
+                  boxShadow: 'none',
+                },
+              }}
         >
             <DialogTitle><center><Typography variant="h2" style={{ "fontFamily": "MinSans" }}>Socials</Typography></center></DialogTitle>
             <div style={{ "margin": "10px" }}>

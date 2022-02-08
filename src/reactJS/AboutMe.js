@@ -46,6 +46,7 @@ export default function AboutMe({openModalTigger}) {
         tooltip: { trigger: "none" },
         legend: false,
         is3D: false,
+        backgroundColor: { fill:'transparent' }
     };
 
     return (
@@ -53,9 +54,16 @@ export default function AboutMe({openModalTigger}) {
             open={open}
             fullWidth
             maxWidth="lg"
+            PaperProps={{
+                style: {
+                  //background: "linear-gradient( 45deg, #CA4246 16.666%,  #E16541 16.666%,  #E16541 33.333%,  #F18F43 33.333%, #F18F43 50%,  #8B9862 50%,  #8B9862 66.666%,  #476098 66.666%,  #476098 83.333%,  #A7489B 83.333%)",
+                  background: "#0ac repeating-conic-gradient(hsla(110, 100%, 79%, 1) 0 15deg, hsla(110, 100%, 89%, 1) 0 30deg)",
+                  boxShadow: 'none',
+                },
+              }}
         >
             <DialogTitle><center><Typography variant="h2" style={{ "fontFamily": "MinSans" }}>About Me</Typography></center></DialogTitle>
-            <div style={{ "margin": "10px" }}>
+            <div style={{ "margin": "10px"}}>
                 <Grid container>
                     <Grid item xs>
                         <Typography variant="h6" style={{ "fontFamily": "MinSans" }}>My Skills:</Typography>

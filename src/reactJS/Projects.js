@@ -29,6 +29,12 @@ export default function Projects({ openModalTigger }) {
             open={open}
             fullWidth
             maxWidth="lg"
+            PaperProps={{
+                style: {
+                  background: "#0ac repeating-conic-gradient(hsla(175, 100%, 77%, 1) 0 15deg, hsla(175, 100%, 89%, 1) 0 30deg)",
+                  boxShadow: 'none',
+                },
+              }}
         >
             <DialogTitle><center><Typography variant="h2" style={{ "fontFamily": "MinSans" }}>Projects</Typography></center></DialogTitle>
             <center>
