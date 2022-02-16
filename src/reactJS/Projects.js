@@ -72,7 +72,7 @@ export default function Projects({ openModalTigger }) {
 
 let infoMathBook = "Bei diesem Programm handelt es sich um eine virtuelle Schultafel, welche darauf ausgelegt ist, Formeln zu schreiben. Die Idee dazu ist während der Zeit des online-schoolings geboren worden und soll den virtuellen Matheunterricht erleichtern.";
 
-let umsetzungMathBook = "Das Programm ist dabei in Java mithilfe der graphischen Library Swing programmiert worden. Um eine schnelle und einfache Eingabe der Formeln garantieren zu können, wurde, extra für diese Anwendung, eine kleine Skript-Sprache, ausgelegt auf das Schreiben von Formeln, implementiert!";
+let umsetzungMathBook = "Das Programm ist dabei in Java mithilfe der grafischen Library Swing programmiert worden. Um eine schnelle und einfache Eingabe der Formeln garantieren zu können, wurde, extra für diese Anwendung, eine kleine Skript-Sprache, ausgelegt auf das Schreiben von Formeln, implementiert!";
 
 let MathBook = <Project heading="MathBook" data={
     [
@@ -89,7 +89,7 @@ let MathBook = <Project heading="MathBook" data={
 
 let info3DViewer = "Bei diesem Programm handelt es sich um einen 3D Viewer, welcher es einem erlaubt 3D Modelle im .obj Format anzuzeigen. Diese können dabei in alle Richtungen gedreht, gezoomt und bewegt werden.";
 
-let umsetzung3DViewer = "Das Programm ist dabei in Haskell mithilfe der mithilfe der 2D-GraphikLibrary Gloss umgesetzt. Anzumerken ist, dass sowohl der Obj-Parser als auch der 3DRenderer ohne eine jeweilige Library programmiert wurde! Es wurde lediglich eine 2D-Zeichen Library verwendet."
+let umsetzung3DViewer = "Das Programm ist dabei in Haskell mithilfe der mithilfe der 2D-Grafik-Library Gloss umgesetzt. Anzumerken ist, dass sowohl der Obj-Parser als auch der 3DRenderer ohne eine jeweilige Library programmiert wurde! Es wurde lediglich eine 2D-Zeichen Library verwendet."
 
 let Viewer3D = <Project heading="3DViewer" data={
     [
@@ -104,7 +104,7 @@ let Viewer3D = <Project heading="3DViewer" data={
 
 
 
-let infoEngine = "Hierbei handelt es sich um eine einfache Spiele Engine. Diese erlaubt es einem im objektorientierten Stiel, Spiele zu schreiben.  Besondere Features sind dabei, Stereo Audio, Animierte Sprites und eine 2D Physik Engine. Bei der Entwicklung wurde großes Augenmerk auf eine einfache Verwendung gelegt.";
+let infoEngine = "Hierbei handelt es sich um eine einfache Spiele-Engine. Diese erlaubt es einem im objektorientierten Stil, Spiele zu schreiben.  Besondere Features sind dabei, Stereo Audio, Animierte Sprites und eine 2D Physik Engine. Bei der Entwicklung wurde großes Augenmerk auf eine einfache Verwendung gelegt.";
 
 let umsetzungEngine = "Die Bibliothek ist dabei in Java programmiert worden und ist dabei Objektorientiert und Event-basiert."
 
@@ -128,7 +128,7 @@ let Image = <Project heading="PPM-ImageLib" data={
 
 
 
-let infoHomePage = "Meine Eigene kleine Welt :-)";
+let infoHomePage = "Meine eigene kleine Welt :-)";
 
 let umsetzungHomePage = "Die Website ist mit React und threeJs programmiert. Die Modelle sind alle in Blender gezeichnet"
 
