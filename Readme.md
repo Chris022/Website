@@ -1,4 +1,4 @@
-# My Word
+# My World
 
 This is my personal website programmed in plain JS and HTML.
 It uses the threeJS library to allow the visitor to explore my World with a little ship.
